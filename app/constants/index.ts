@@ -7,6 +7,24 @@ const saveIcon = require('@/assets/icons/save.png');
 const undoIcon = require('@/assets/icons/undo.png');
 const bookmarkIcon = require('@/assets/icons/bookmark.png');
 const plusIcon = require('@/assets/icons/plus.png');
+const profileIcon = require('@/assets/icons/profile.png');
+const eyeIcon = require('@/assets/icons/eye.png');
+const eyeHideIcon = require('@/assets/icons/eyehide.png');
+
+const logoImage = require('@/assets/images/logo-white.jpg');
+const logoSmallImage = require('@/assets/images/logo-black.png');
+const cardsImage = require('@/assets/images/night-scape.jpg');
+const pathImage = require('@/assets/images/arrow.png');
+
+
+
+export const images = {
+  logo: logoImage,
+  logoSmall: logoSmallImage,
+  cards: cardsImage,
+  path: pathImage
+};
+
 
 export const icons = {
   homeSharp: homeSharpIcon,
@@ -18,4 +36,7 @@ export const icons = {
   undo: undoIcon,
   bookmark: bookmarkIcon,
   plus: plusIcon,
+  profile: profileIcon,
+  eye: eyeIcon,
+  eyeHide: eyeHideIcon
 };
