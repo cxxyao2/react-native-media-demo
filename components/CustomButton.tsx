@@ -18,16 +18,12 @@ const CustomButton = ({
 }: CustomButtonProps) => {
   return (
     <TouchableOpacity
-      className={`bg-secondary 
-    min-h-[62px] items-center 
-    justify-center rounded-xl
-      ${containerStyles} 
-      ${isLoading ? 'opacity-50' : ''}
-    `}
-    disabled={isLoading}
-    >
-      <Text className={`text-primary font-psemiBold
-        text-lg ${textStyles}`}>
+      className={`min-h-[62px] w-full items-center justify-center   rounded-xl bg-secondary  ${containerStyles}  ${isLoading ? 'opacity-50' : ''}  `}
+      onPress={handlePress}
+      disabled={isLoading}>
+      <Text
+        className={`font-psemiBold text-lg
+        text-primary ${textStyles}`}>
         {title}
       </Text>
     </TouchableOpacity>

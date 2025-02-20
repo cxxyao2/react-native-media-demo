@@ -6,7 +6,7 @@ type FormFieldProps = {
   title: string;
   value: any;
   placeholder?: string;
-  handleChangeText: (e:string) => void;
+  handleChangeText: (e: string) => void;
   otherStyles?: string;
   [key: string]: any;
 };
@@ -21,17 +21,18 @@ const FormField = ({
 }: FormFieldProps) => {
   const [showPassword, setShowPassword] = useState(false);
   return (
-    <View className={`space-y-2 ${otherStyles}`}>
-      <Text className="font-pmedium text-base text-gray-100">{title}</Text>
+    <View className={`space-y-2 ${otherStyles} w-full `}>
+      <Text className=" font-pmedium text-base text-gray-100">{title}</Text>
 
       <View
-        className="border-black-200 bg-black-100 h-16
-       w-full items-center rounded-2xl border-2 
-        px-4 focus:border-secondary flex-row">
+        className="border-black-200 h-16 w-full
+       flex-row items-center rounded-2xl border-2 
+        bg-primary-600 px-4  focus:border-secondary">
         <TextInput
           className="flex-1 font-psemiBold text-base 
           text-white"
           value={value}
+          {...props}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
           onChangeText={handleChangeText}
@@ -42,7 +43,7 @@ const FormField = ({
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
             <Image
               source={!showPassword ? icons.eye : icons.eyeHide}
-              className="h-6 w-6"
+              className="h-[10px]  w-[10px] max-w-[20px]"
               resizeMode="contain"
             />
           </TouchableOpacity>

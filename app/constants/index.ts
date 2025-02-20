@@ -11,22 +11,22 @@ const profileIcon = require('@/assets/icons/profile.png');
 const eyeIcon = require('@/assets/icons/eye.png');
 const eyeHideIcon = require('@/assets/icons/eyehide.png');
 
-const logoImage = require('@/assets/images/logo-white.jpg');
-const logoSmallImage = require('@/assets/images/logo-black.png');
+const logoWhiteImage = require('@/assets/images/logo-white.jpg');
+const logoBlackImage = require('@/assets/images/logo-black.png');
 const cardsImage = require('@/assets/images/night-scape.jpg');
 const pathImage = require('@/assets/images/arrow.png');
 
 
 
-export const images = {
-  logo: logoImage,
-  logoSmall: logoSmallImage,
+const images = {
+  logoWhite: logoWhiteImage,
+  logoBlack: logoBlackImage,
   cards: cardsImage,
   path: pathImage
 };
 
 
-export const icons = {
+const icons = {
   homeSharp: homeSharpIcon,
   homeOutline: homeOutlineIcon,
   informationOutline: informationOutlineIcon,
@@ -40,3 +40,5 @@ export const icons = {
   eye: eyeIcon,
   eyeHide: eyeHideIcon
 };
+
+export { images, icons }
