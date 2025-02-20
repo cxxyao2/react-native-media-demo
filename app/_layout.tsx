@@ -4,7 +4,7 @@ import { Slot, SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import { colorScheme, useColorScheme } from 'nativewind';
 import '../global.css';
-import { GlobalProvider } from 'context/GlobalProvider';
+import GlobalProvider  from 'context/GlobalProvider';
 
 SplashScreen.preventAutoHideAsync();
 

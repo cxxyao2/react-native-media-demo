@@ -12,11 +12,17 @@ type TabIconProps = {
 
 const TabIcon = ({ icon, color, name, focused }: TabIconProps) => {
   return (
-    <View className="items-center justify-center gap-2">
-      <Image source={icon} resizeMode="contain" tintColor={color} className="h-6 w-6" />
-      <Text
-        className={`${focused ? 'font-psemiBold ' : 'font-pregular'} text-xs`}
-        style={{ color: color }}>
+    <View className="items-center justify-center  bg-white">
+      <View className="h-full mb-4">
+        <Image
+          source={icon}
+          resizeMode="contain"
+          tintColor={color}
+          className="h-[10px]  w-[10px] max-w-[20px]"
+        />
+      </View>
+
+      <Text className={`${focused ? 'font-psemiBold ' : 'font-pregular'} text-xs text-white`}>
         {name}
       </Text>
     </View>

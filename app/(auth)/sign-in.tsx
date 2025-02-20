@@ -11,8 +11,10 @@ import { images, icons } from '@/constants';
 import FormField from '@/components/FormField';
 import CustomButton from '@/components/CustomButton';
 import CustomAlert from '@/components/CustomAlert ';
+import { useGlobalContext } from 'context/GlobalProvider';
 
 const SignIn = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -32,13 +34,18 @@ const SignIn = () => {
         password: form.password,
       });
       const token = response.data.accessToken;
-      const user = response.data.user;
+      const user = JSON.stringify(response.data.user);
       await AsyncStorage.setItem('accessToken', token);
-      await AsyncStorage.setItem('user', JSON.stringify(user));
-      router.push('/home');
+      await AsyncStorage.setItem('user', user);
+
+      setUser(user);
+      setIsLoggedIn(true);
+      router.replace('/home');
     } catch (error: any) {
       setModalContent(error?.message ?? 'Login failed. ');
       console.error('Error when sign in:', error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

@@ -1,3 +1,5 @@
+import Search from "@/search/[query]";
+
 const homeSharpIcon = require('@/assets/icons/home-sharp.png');
 const homeOutlineIcon = require('@/assets/icons/home-outline.png');
 const informationOutlineIcon = require('@/assets/icons/information-outline.png');
@@ -10,6 +12,7 @@ const plusIcon = require('@/assets/icons/plus.png');
 const profileIcon = require('@/assets/icons/profile.png');
 const eyeIcon = require('@/assets/icons/eye.png');
 const eyeHideIcon = require('@/assets/icons/eyehide.png');
+const searchIcon = require('@/assets/icons/search.png');
 
 const logoWhiteImage = require('@/assets/images/logo-white.jpg');
 const logoBlackImage = require('@/assets/images/logo-black.png');
@@ -38,7 +41,8 @@ const icons = {
   plus: plusIcon,
   profile: profileIcon,
   eye: eyeIcon,
-  eyeHide: eyeHideIcon
+  eyeHide: eyeHideIcon,
+  Search: searchIcon
 };
 
 export { images, icons }
