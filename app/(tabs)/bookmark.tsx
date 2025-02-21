@@ -9,4 +9,3 @@ export default function Bookmark() {
   )
 }
 
-const styles = StyleSheet.create({})

@@ -3,26 +3,15 @@ import React, { useState } from 'react';
 import { icons } from '@/constants';
 
 type SearchInputProps = {
-  title: string;
-  value: any;
-  placeholder?: string;
-  handleChangeText: (e: string) => void;
-  otherStyles?: string;
-  [key: string]: any;
+  value: string;
 };
 
-const SearchInput = ({
-  title,
-  value,
-  placeholder,
-  handleChangeText,
-  otherStyles,
-  ...props
-}: SearchInputProps) => {
-  const [showPassword, setShowPassword] = useState(false);
+const SearchInput = ({ value }: SearchInputProps) => {
+  const handleChangeText = () => {};
+
   return (
     <View
-      className="border-black-200 h-16 w-full
+      className="border-black-200 h-10 w-full
        flex-row items-center space-x-4 rounded-2xl 
         border-2 bg-primary-600  px-4
         focus:border-secondary">
@@ -30,18 +19,16 @@ const SearchInput = ({
         className="mt-0.5 flex-1 font-pregular text-base 
           text-white"
         value={value}
-        {...props}
-        placeholder={placeholder}
-        placeholderTextColor="#7b7b8b"
+        placeholder="Search for a video topic..."
+        placeholderTextColor="white"
         onChangeText={handleChangeText}
-        secureTextEntry={title === 'Password' && !showPassword}
       />
 
-     <TouchableOpacity>
-        <Image 
-        source={icons.Search} 
-        />
-     </TouchableOpacity>
+      <TouchableOpacity>
+        <View>
+          <Image source={icons.Search} className=" h-5 w-5 max-w-10" resizeMode="contain" />
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };

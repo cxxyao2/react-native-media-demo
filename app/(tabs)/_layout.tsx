@@ -2,27 +2,27 @@ import { View, Text, Image, ImageSourcePropType } from 'react-native';
 import React from 'react';
 import { Tabs, Redirect } from 'expo-router';
 import { icons } from '@/constants';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 type TabIconProps = {
-  icon: ImageSourcePropType;
+  icon: string;
   color: string;
   name: string;
   focused: boolean;
 };
 
-const TabIcon = ({ icon, color, name, focused }: TabIconProps) => {
+const TabIcon = ({ icon = 'home', color, name, focused }: TabIconProps) => {
   return (
-    <View className="items-center justify-center  bg-white">
-      <View className="h-full mb-4">
-        <Image
-          source={icon}
-          resizeMode="contain"
-          tintColor={color}
-          className="h-[10px]  w-[10px] max-w-[20px]"
-        />
-      </View>
+    <View className="mt-2 items-center justify-center space-y-2">
+      <Ionicons
+        name={focused ? (`${icon}-sharp` as any) : `${icon}-outline`}
+        size={24}
+        color={color}
+      />
 
-      <Text className={`${focused ? 'font-psemiBold ' : 'font-pregular'} text-xs text-white`}>
+      <Text
+        className={`${focused ? 'font-psemiBold ' : 'font-pregular'} text-xs`}
+        style={{ color: color }}>
         {name}
       </Text>
     </View>
@@ -35,12 +35,12 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
-          tabBarActiveTintColor: '##FFA001',
-          tabBarInactiveTintColor: '#CDCDE0',
+          tabBarActiveTintColor: '#FF5722',
+          tabBarInactiveTintColor: 'white',
           tabBarStyle: {
             backgroundColor: '#161622',
-            borderTopWidth: 1,
-            borderTopColor: '#232533',
+            borderTopWidth: 2,
+            borderTopColor: '#9E9E9E',
             height: 84,
           },
         }}>
@@ -50,7 +50,8 @@ const TabsLayout = () => {
             title: 'Home',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={icons.homeSharp} color={color} name="Home" focused={focused} />
+              <TabIcon icon={'home'} color={color} name="Home" focused={focused} />
+              // <Ionicons name={focused ? 'home-sharp' : 'home-outline'} size={24} color={color} />
             ),
           }}
         />
@@ -61,7 +62,7 @@ const TabsLayout = () => {
             title: 'Create',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={icons.plus} color={color} name="Create" focused={focused} />
+              <TabIcon icon={'create'} color={color} name="Create" focused={focused} />
             ),
           }}
         />
@@ -72,7 +73,7 @@ const TabsLayout = () => {
             title: 'Bookmark',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={icons.bookmark} color={color} name="Bookmark" focused={focused} />
+              <TabIcon icon={'bookmark'} color={color} name="Bookmark" focused={focused} />
             ),
           }}
         />
@@ -83,7 +84,7 @@ const TabsLayout = () => {
             title: 'Profile',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <TabIcon icon={icons.profile} color={color} name="Profile" focused={focused} />
+              <TabIcon icon={'settings'} color={color} name="Profile" focused={focused} />
             ),
           }}
         />
