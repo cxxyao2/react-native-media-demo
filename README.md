@@ -72,8 +72,8 @@ You can set borders and border colors to test the layout more efficiently.
 ## Screenshots
 
 - login1
-  ![login](./screenshots/login.jpg)
+  ![login](login.jpg)
 - main feature
-  ![play](./screenshots/play.jpg)
+  ![play](play.jpg)
 - not found
-  ![not-found](./screenshots/no-found.jpg)
+  ![not-found](no-found.jpg)
