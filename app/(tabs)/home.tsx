@@ -50,7 +50,7 @@ const Home = () => {
 
             <View className="w-full flex-1 pb-8 pt-5">
               <Text className="font-regular mb_3 text-lg text-gray-100">Latest Videos</Text>
-              <Trending posts={[{ id: 1 }, { id: 2 }, { id: 3 }]} />
+              <Trending posts={posts??[]} />
             </View>
           </View>
         )}

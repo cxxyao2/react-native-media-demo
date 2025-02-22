@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Post } from 'lib/api';
 import { images } from '@/constants';
 import Entypo from '@expo/vector-icons/Entypo';
+import { Ionicons } from '@expo/vector-icons';
 
 type VideoCardProps = {
   video: Post;
@@ -41,14 +42,23 @@ const VideoCard = ({ video: { title, thumbnail, video, creator } }: VideoCardPro
       </View>
 
       {play ? (
-        <Text>Playing</Text>
+        <Text className='text-white'>Playing</Text>
       ) : (
-        <TouchableOpacity className="relative mt-4 h-[160px]  w-full  items-center justify-center rounded-xl">
+        <TouchableOpacity 
+        activeOpacity={0.7}
+        onPress={()=>setPlay(true)}
+        className="relative mt-10 h-[200px]  w-full  items-center justify-center  rounded-xl">
           <Image
             source={images.cards}
-            className="mt-10 h-full w-[100px]  max-w-full  rounded-xl"
+            className="  w-[100px]  max-w-full  rounded-xl "
             resizeMode="contain"
-          />
+          />  
+         <Ionicons
+         className='absolute left-auto  top-auto'
+        name='play'
+        size={24}
+        color={'white'}
+      />
         </TouchableOpacity>
       )}
     </View>
