@@ -16,6 +16,10 @@ To create the project and integrate `nativewind`, use the following command:
 npx create-expo-stack@latest --nativewind
 ```
 
+## Backend
+
+The backend code for this project is located at: https://github.com/cxxyao2/HealthCenterBackend.git.
+
 ## Notes
 
 ### Regarding Routing (Router)
