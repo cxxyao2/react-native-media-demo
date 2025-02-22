@@ -18,7 +18,7 @@ npx create-expo-stack@latest --nativewind
 
 ## Backend
 
-The backend code for this project is located at: https://github.com/cxxyao2/HealthCenterBackend.git.
+The backend code for this project is located at:[Here](https://github.com/cxxyao2/HealthCenterBackend.git).
 
 ## Notes
 
