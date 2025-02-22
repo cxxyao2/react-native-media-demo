@@ -18,14 +18,15 @@ const logoWhiteImage = require('@/assets/images/logo-white.jpg');
 const logoBlackImage = require('@/assets/images/logo-black.png');
 const cardsImage = require('@/assets/images/night-scape.jpg');
 const pathImage = require('@/assets/images/arrow.png');
-
+const avatarImage = require('@/assets/images/avatar.jpg');
 
 
 const images = {
   logoWhite: logoWhiteImage,
   logoBlack: logoBlackImage,
   cards: cardsImage,
-  path: pathImage
+  path: pathImage,
+  avatar: avatarImage
 };
 
 
